@@ -9,4 +9,4 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'rango/index.html')
+    return render(request, 'rango/about.html')
