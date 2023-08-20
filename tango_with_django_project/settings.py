@@ -107,8 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 STATICFILES_DIRS = [STATIC_DIR, ]
-MEDIA_ROOT = MEDIA_DIR
-MEDIA_URL =  os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
