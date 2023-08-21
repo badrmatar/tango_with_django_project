@@ -7,6 +7,6 @@ def index(request):
     context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
     return render(request, 'rango/index.html', context=context_dict)
 
+
 def about(request):
-    context = {'MEDIA_URL': settings.MEDIA_URL}
-    return render(request, 'rango/about.html', context)
+    return render(request, 'rango/about.html')
