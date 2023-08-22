@@ -7,6 +7,8 @@ django.setup()
 
 from rango.models import Category, Page
 
+
+
 def populate():
     python_pages = [
         {'title': 'Official Python Tutorial', 'url': 'http://docs.python.org/3/tutorial/'},
@@ -42,16 +44,16 @@ def populate():
 
 
 def add_page(cat, title, url, views=0):
-    p, created = Page.objects.get_or_create(category=cat, title=title, defaults={'url': url, 'views': views})
-    if not created:
-        p.url = url
-        p.views = views
-        p.save()
+    p = Page.objects.get_or_create(category=cat, title=title)[0]
+    p.url = url
+    p.views = views
+    p.save()
     return p
 
 
 def add_cat(name):
-    c, created = Category.objects.get_or_create(name=name)
+    c = Category.objects.get_or_create(name=name)[0]
+    c.save()
     return c
 
 
