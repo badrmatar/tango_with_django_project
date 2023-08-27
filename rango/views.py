@@ -4,9 +4,9 @@ from django.http import HttpResponse
 
 
 def index(request):
-    context_list = Category.objects.order_by('-likes')[:5]
+    categories_list = Category.objects.order_by('-likes')[:5]
     context_dict = {}
-    context_dict['Categories'] = context_list
+    context_dict['categories'] = categories_list
 
     context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
     return render(request, 'rango/index.html', context=context_dict)
